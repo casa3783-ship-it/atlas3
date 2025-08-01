@@ -3,6 +3,8 @@
 
 /* || General setup */
 
+/* I know how to get the green background but its so ugly so I changed It */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -28,7 +30,7 @@ h1, h2, h3 {
 
 p, input, li {
   font-family: 'Roboto Condensed', sans-serif;
-  color: rgb(0, 0, 0);
+  color:rgb(0, 0, 0);
 }
 
 h1 {
@@ -43,7 +45,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -52,28 +54,36 @@ p, li {
   line-height: 1.5;
 }
 
-/* || layout using flexbox */
+/* || header layout */
 
-.flex-container {
-  background-color: rgba(255, 255, 255, 1);
-  padding: 1%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-header, main, footer {
-  background-color: rgba(111, 164, 215, 1);
-  padding: 1%;
-  /* Make sure these elements take up the full width */
-  flex: 1 1 100%;
-}
-
-/* Header specific styles */
 header {
+  margin-bottom: 10px;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
 }
+
+body > * {
+  background-color: red;
+  padding: 1%;
+}
+
+main, article, aside, footer, section {
+  background-color: rgba(111, 164, 215, 1);
+  padding: 1%;
+}
+
+header {
+  background-color: rgba(111, 164, 215, 1);
+  padding: 1%;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1%;
+}
+
+
+
 
 h1 {
   flex: 5;
@@ -83,40 +93,47 @@ h1 {
 header img {
   display: block;
   height: 60px;
-  padding: 20px; /* Adjust padding for better alignment */
+  padding-top: 20.15px;
 }
 
 nav {
   height: 50px;
-  flex: 1 1 100%;
+  flex: 100%;
   display: flex;
-  background-color: rgba(255, 255, 255, 1);
-  padding: 0; /* Remove padding here to be consistent with nav ul */
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
+  flex: 2;
   display: flex;
-  flex: 1; /* Make the ul take up all available space in the nav */
-  justify-content: space-around; /* Space out the list items evenly */
 }
 
 nav li {
+  display: inline;
   text-align: center;
-  flex: 1; /* Each li takes up equal space */
+  flex: 1;
 }
 
 nav a, nav span {
-  display: block; /* Use block to make the link clickable over the entire area */
+  display: inline-block;
   font-size: 2rem;
-  line-height: 50px; /* Center text vertically with the nav's height */
+  height: 3rem;
+  line-height: 1.7;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+
 }
 
-/* Main layout */
+/* || main layout */
+
+/* original main style
+main {
+  display: flex;
+} 
+ */
+
 main {
   display: flex;
   flex-flow: row wrap;
@@ -129,31 +146,40 @@ section {
 aside {
   flex: 1;
   margin-left: 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Lighter color to differentiate */
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 1%;
-}
-
-/* Use flexbox for the aside images instead of floats */
-aside {
   display: flex;
   flex-direction: column;
 }
 
-aside h2, aside p {
-  flex: 1 1 auto;
+.bird-photos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; 
 }
 
-aside a {
-  flex: 1 1 50%;
-  padding: 5px; /* Add some spacing between images */
-  box-sizing: border-box; /* Include padding in the width calculation */
+.bird-photos a {
+  flex: 1 1 48%; 
+  box-sizing: border-box; 
 }
 
-aside img {
-  width: 100%;
+.bird-photos img {
+  width: 100%; 
   display: block;
 }
 
 footer {
-  text-align: center;
+  margin-top: 10px;
+}
+
+/* HK additions */
+
+main {
+  flex: 3;
+}
+
+.flex-container {
+  background-color: rgba(255, 255, 255, 1); padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
 }
