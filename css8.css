@@ -122,9 +122,12 @@ nav a, nav span {
 /* Correct main style */
 main {
   display: flex;
-  flex-flow: row wrap; 
+  flex-flow: row wrap; /* This ensures the children of main can wrap if needed, though they shouldn't in this case */
 }
 
+/* Removed the 'main { flex: 3; }' which was causing the issue */
+
+aside {
   flex: 1;
   margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.7);
@@ -153,6 +156,11 @@ footer {
 
 /* HK additions */
 
+/* This style is causing the problem and needs to be removed or commented out.
+main {
+  flex: 3;
+}
+*/
 
 .flex-container {
   background-color: rgba(255, 255, 255, 1);
