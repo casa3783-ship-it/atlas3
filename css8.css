@@ -2,9 +2,6 @@
 /* CSS Document */
 
 /* || General setup */
-
-/* I know how to get the green background but its so ugly so I changed It */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -22,7 +19,6 @@ body {
 }
 
 /* || typography */
-
 h1, h2, h3 {
   font-family: 'Cinzel Decorative', cursive;
   color: rgb(0, 0, 0);
@@ -30,7 +26,7 @@ h1, h2, h3 {
 
 p, input, li {
   font-family: 'Roboto Condensed', sans-serif;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 h1 {
@@ -54,93 +50,83 @@ p, li {
   line-height: 1.5;
 }
 
-/* || header layout */
-
-header {
-  margin-bottom: 10px;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-body > * {
-  background-color: red;
-  padding: 1%;
-}
-
-main, article, aside, footer, section {
-  background-color: rgba(111, 164, 215, 1);
-  padding: 1%;
-}
-
-header {
-  background-color: rgba(111, 164, 215, 1);
-  padding: 1%;
-}
-
-nav {
+/* || layout */
+.flex-container {
   background-color: rgba(255, 255, 255, 1);
   padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+header, main, footer {
+  background-color: rgba(111, 164, 215, 1);
+  padding: 1%;
+  width: 100%; /* Make header, main, and footer take up the full width */
+}
 
-
+/* Header layout */
+header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
 h1 {
-  flex: 5;
+  flex: 1 1 auto;
   text-transform: uppercase;
+  margin: 0;
 }
 
 header img {
   display: block;
   height: 60px;
-  padding-top: 20.15px;
+  padding: 10px;
 }
 
 nav {
   height: 50px;
   flex: 100%;
   display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0; /* Remove padding from nav to allow the list items to fill it */
 }
 
 nav ul {
   padding: 0;
   list-style-type: none;
-  flex: 2;
+  flex: 1;
   display: flex;
+  justify-content: space-around;
+  margin: 0;
 }
 
 nav li {
-  display: inline;
-  text-align: center;
   flex: 1;
+  text-align: center;
 }
 
 nav a, nav span {
-  display: inline-block;
+  display: block;
   font-size: 2rem;
-  height: 3rem;
   line-height: 1.7;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
-
 }
 
-/* || main layout */
-
-/* original main style
-main {
-  display: flex;
-} 
- */
-
+/* Main layout */
 main {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 10px;
 }
 
 section {
   flex: 4;
+  background-color: rgba(111, 164, 215, 1);
+  padding: 1%;
 }
 
 aside {
@@ -155,31 +141,19 @@ aside {
 .bird-photos {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 .bird-photos a {
-  flex: 1 1 48%; 
-  box-sizing: border-box; 
+  flex: 1 1 48%;
+  box-sizing: border-box;
 }
 
 .bird-photos img {
-  width: 100%; 
+  width: 100%;
   display: block;
 }
 
 footer {
   margin-top: 10px;
-}
-
-/* HK additions */
-
-main {
-  flex: 3;
-}
-
-.flex-container {
-  background-color: rgba(255, 255, 255, 1); padding: 1%;
-  display: flex;
-  flex-wrap: wrap;
 }
